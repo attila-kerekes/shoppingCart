@@ -55,7 +55,7 @@ export function ShoppingCartProvider({ children }:
             return { ...item, quantity: item.quantity + 1 }
           } else {
             return item
-          }
+          } 
         })
       }
     })

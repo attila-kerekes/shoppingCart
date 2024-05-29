@@ -1,27 +1,27 @@
 [
     {
       "id": 1,
-      "name": "Book",
+      "name": "Meat and Fish",
       "price": 10.99,
-      "imgUrl": "/imgs/book.jpg"
+      "imgUrl": "/imgs/hus-es-halkinalatunk-app-28945.jpg"
     },
     {
       "id": 2,
-      "name": "Computer",
-      "price": 1199,
-      "imgUrl": "/imgs/computer.jpg"
+      "name": "Bakery products",
+      "price": 3.50,
+      "imgUrl": "/imgs/pektermekeink-app-28951.jpg"
     },
     {
       "id": 3,
-      "name": "Banana",
+      "name": "Dairy products",
       "price": 1.05,
-      "imgUrl": "/imgs/banana.jpg"
+      "imgUrl": "/imgs/tejtermekeink-app-28943.jpg"
     },
     {
       "id": 4,
-      "name": "Car",
-      "price": 14000,
-      "imgUrl": "/imgs/car.jpg"
+      "name": "Fruit and veg",
+      "price": 2.59,
+      "imgUrl": "/imgs/zoldseg-es-gyumolcs-app-28944.jpg"
     }
   ]
   
