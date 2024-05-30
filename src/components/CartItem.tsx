@@ -1,22 +1,29 @@
 import { Button, Stack } from "react-bootstrap"
 import { useShoppingCart } from "../context/ShoppingCartContext"
-import storageItems from "../data/items.json"
+//import storageItems from "../data/items.json"
 import { formatCurrency } from "../utilities/formatCurrency"
+import { useProducts } from "../hooks/useProducts"
 
 type CartItemProps = {
-  id: number
+  _id: string
   quantity: number
 }
 
-export function CartItem({ id, quantity }: CartItemProps) {
+export function CartItem({ _id, quantity }: CartItemProps) {
   const { removeFromCart } = useShoppingCart()
-  const item = storageItems.find(i => i.id === id)
+  
+  const { storageItems, loading, error } = useProducts()
+
+  if (loading) return <div>Loading...</div>
+  if (error) return <div>Error: {error}</div>
+  
+  const item = storageItems.find(i => i._id === _id)
   if (item == null) return null
 
   return (
     <Stack direction="horizontal" gap={2} className="d-flex align-items-center">
       <img
-        src={item.imgUrl}
+        src={item.imagePath}
         style={{ width: "125px", height: "75px", objectFit: "cover" }}
       />
       <div className="me-auto">
@@ -40,7 +47,7 @@ export function CartItem({ id, quantity }: CartItemProps) {
       <Button
         variant="outline-danger"
         size="sm"
-        onClick={() => removeFromCart(item.id)}
+        onClick={() => removeFromCart(item._id)}
         >&times;</Button>
     </Stack>
   )
