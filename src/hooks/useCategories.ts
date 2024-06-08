@@ -1,20 +1,20 @@
 import { useEffect, useState } from 'react';
-import { Product } from '../types/Product';
+import { Category } from '../types/Category';
 
-export function useProducts() {
-  const [storageItems, setStorageItems] = useState<Product[]>([]);
+export function useCategories() {
+  const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    const fetchCategories = async () => {
       try {
-        const response = await fetch('/api/aldi');
+        const response = await fetch('/api/categories');
         if (!response.ok) {
-          throw new Error('Failed to fetch products');
+          throw new Error('Failed to fetch categories');
         }
-        const data: Product[] = await response.json();
-        setStorageItems(data);
+        const data: Category[] = await response.json();
+        setCategories(data);
       } catch (err) {
         if (err instanceof Error) {
           setError(err.message);
@@ -26,8 +26,8 @@ export function useProducts() {
       }
     };
 
-    fetchProducts();
+    fetchCategories();
   }, []);
 
-  return { storageItems, loading, error };
+  return { categories, loading, error };
 }

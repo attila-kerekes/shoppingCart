@@ -5,6 +5,7 @@ import { Storage } from "./pages/Storage"
 import { About } from "./pages/About"
 import { Navbar } from "./components/Navbar"
 import { ShoppingCartProvider } from "./context/ShoppingCartContext"
+import { Store } from "./pages/Store"
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/storage" element={<Storage />} />
+        <Route path="/store" element={<Store />} />
         <Route path="/about" element={<About />} />
       </Routes>
     </Container>

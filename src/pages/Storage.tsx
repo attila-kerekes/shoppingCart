@@ -1,6 +1,5 @@
 import { Col, Row } from "react-bootstrap"
 import { StorageItem } from "../components/StorageItem"
-//import storageItems from "../data/items.json"
 import { useProducts } from "../hooks/useProducts"
 
 export function Storage() {
